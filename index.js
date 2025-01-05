@@ -1,9 +1,9 @@
 import { createServer } from "http";
-import { parse } from "url";
 import { readFile } from "fs";
+import { URL } from "url";
 
 createServer((req, res) => {
-  const q = parse(req.url, true);
+  const q = new URL(req.url, "http://localhost:8080/");
   const pages = ["/index.html", "/about.html", "/contact-me.html"];
   const filename =
     "." +
