@@ -2,6 +2,8 @@ import { createServer } from "http";
 import { readFile } from "fs";
 import { URL } from "url";
 
+const result = dotenv.config()
+
 createServer((req, res) => {
   const q = new URL(req.url, "http://localhost:8080/");
   const pages = ["/index.html", "/about.html", "/contact-me.html"];
